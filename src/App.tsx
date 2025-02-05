@@ -18,6 +18,17 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+function getCurrentDateTime() {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const now = new Date();
+  
+  const day = days[now.getDay()];
+  const openTime = "9:00 AM";
+  const closeTime = "6:00 PM";
+
+  return `${day}: ${openTime} - ${closeTime}`;
+}
+
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -344,7 +355,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-4">
               <Phone className="w-6 h-6 text-emerald-600" />
-              <p className="text-gray-600">+234 703 203 0129</p>
+              <p className="text-gray-600">+234 810 335 6577</p>
             </div>
             <div className="flex items-center space-x-4">
               <Mail className="w-6 h-6 text-emerald-600" />
@@ -352,7 +363,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-4">
               <Clock className="w-6 h-6 text-emerald-600" />
-              <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM</p>
+              <p className="text-gray-600">{getCurrentDateTime()}</p>
             </div>
           </div>
           <form className="space-y-4">
