@@ -33,4 +33,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
 
           local-dir: ./dist/
-          server-dir: /domains/crayfordcomputers.ng/public_html/
+          server-dir: /
